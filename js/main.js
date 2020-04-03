@@ -1,7 +1,7 @@
 "use strict";
 
 var renderer = new THREE.WebGLRenderer({canvas: document.querySelector(".diagram canvas"),antialias: true ,alpha:true, premultipliedAlpha: false });
-renderer.setClearColor(0x29303b);
+renderer.setClearColor(0, 0,0,);
 renderer.shadowMap.enabled = true;
 // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
