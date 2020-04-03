@@ -1,7 +1,7 @@
 "use strict";
 
 var renderer = new THREE.WebGLRenderer({canvas: document.querySelector(".diagram canvas"),antialias: true ,alpha:true, premultipliedAlpha: false });
-renderer.setClearColor(0x808080);
+renderer.setClearColor(0x29303b);
 renderer.shadowMap.enabled = true;
 // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -13,10 +13,12 @@ const mouseControls = new THREE.OrbitControls(
   camera, renderer.domElement);
     mouseControls.enableDamping = true;
     mouseControls.screenSpacePanning = false;
-    mouseControls.minDistance = 0;
-    mouseControls.maxDistance = 100;
+    mouseControls.minDistance = 13;
+    mouseControls.maxDistance = 14;
     mouseControls.autoRotate = 100;
     mouseControls.enableZoom = false;
+    mouseControls.enablePan = false;
+    mouseControls.maxZoom = 0;
 
 
 const scene = new THREE.Scene();
@@ -30,17 +32,18 @@ var geometry = new THREE.PlaneGeometry(200,200,200);
 
 scene.add( plane );
  plane.rotation.x = -0.5 * Math.PI;
- plane.position.set(0, -3.65 ,0 );
+ plane.position.set(0, -4 ,0 );
 
  plane.receiveShadow = true;
 
 
 const light1 = new THREE.SpotLight(0xFFFFFF , 2, 0);
-light1.position.set(10, 100, 45);
-scene.add(light1);
-light1.castShadow = true;
-light1.shadow.mapSize.width = 2048;
-light1.shadow.mapSize.height = 2048;
+  light1.color.setHSL( 0.1, 1, 0.95 );
+    light1.position.set(10, 100, 45);
+      scene.add(light1);
+        light1.castShadow = true;
+          light1.shadow.mapSize.width = 2048;
+            light1.shadow.mapSize.height = 2048;
 
 
 var hemiLight = new THREE.HemisphereLight ( 0xffffff, 0xffffff, 0.6);
@@ -54,23 +57,24 @@ var hemiLight = new THREE.HemisphereLight ( 0xffffff, 0xffffff, 0.6);
 
 var spotLight = new THREE.SpotLight( 0xFFFFFF );
   spotLight.position.set( 100, 200, 120 );
-    spotLight.intensity =4;
-      spotLight.castShadow = true;
-        spotLight.angle =2.8;
-          spotLight.penumbra =0.8;
+    spotLight.color.setHSL( 0.1, 1, 0.95 );
+      spotLight.intensity =4;
+        spotLight.castShadow = true;
+          spotLight.angle =2.8;
+            spotLight.penumbra =0.8;
 
             spotLight.distance = 200;
 
 //function canvas resize//
 function resizeCanvasToDisplaySize() {
   const canvas = renderer.domElement;
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  if (canvas.width !== width ||canvas.height !== height) {
+    const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+        if (canvas.width !== width ||canvas.height !== height) {
     // you must pass false here or three.js sadly fights the browser
-    renderer.setSize(width, height, false);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
+          renderer.setSize(width, height, false);
+            camera.aspect = width / height;
+                camera.updateProjectionMatrix();
 
 
     // set render target sizes here
@@ -80,7 +84,7 @@ function resizeCanvasToDisplaySize() {
 
 //add the model to the scene//
 var loader = new THREE.GLTFLoader();
-loader.load('https://olivercookie79.github.io/threejs-portfolio/models/Dewey10.glb',function(gltf){
+loader.load('models/Dewey17.glb',function(gltf){
 
   gltf.scene.traverse (function( child ) {
 
@@ -95,11 +99,11 @@ loader.load('https://olivercookie79.github.io/threejs-portfolio/models/Dewey10.g
 scene.add( gltf.scene );
 const deweyGeo = ( gltf.scene);
 
-deweyGeo.position.set( 0, -5, 0 );
-  deweyGeo.scale.set( 10, 10, 10 );
-  deweyGeo.rotation.y += 7;
-  deweyGeo.castShadow = true;
-  deweyGeo.receiveShadow = true;
+deweyGeo.position.set( 0, -4, 0 );
+    deweyGeo.scale.set( 10, 10, 10 );
+      deweyGeo.rotation.y += 7;
+          deweyGeo.castShadow = true;
+              deweyGeo.receiveShadow = true;
 
 
 
