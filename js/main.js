@@ -84,7 +84,7 @@ function resizeCanvasToDisplaySize() {
 
 //add the model to the scene//
 var loader = new THREE.GLTFLoader();
-loader.load('models/Dewey17.glb',function(gltf){
+loader.load('models/Dewey23.glb',function(gltf){
 
   gltf.scene.traverse (function( child ) {
 
