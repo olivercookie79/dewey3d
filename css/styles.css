@@ -1,7 +1,8 @@
 
 
-body {  background-color: coral;
+body {  ;
 margin:auto;
+
 
  }
 
@@ -10,10 +11,10 @@ margin:auto;
   font-family: 'Orbitron', sans-serif;
   color: white;
   text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
-  font-size: 100px;
+  font-size: 133px;
   position: absolute;
-  top: 80px;
-  left:300px;
+  top: 20px;
+  left:170px;
   z-index: 1;
 
 
@@ -23,12 +24,13 @@ margin:auto;
 
 .diagram {
 
-  display: flex;
-  flex-direction: row;
+
+
   margin-left: auto;
   padding-right: 110px;
   width: 600px;
   height: 500px;
+  float:right;
 
 
 
