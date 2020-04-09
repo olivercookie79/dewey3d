@@ -43,7 +43,7 @@ margin:auto;
   top: 130px;
   left:120px;
   width:1200px;
-  background-image:linear-gradient(to left bottom, rgba(0, 255, 255, 1),rgba(12, 128, 235, 1));
+  background-image:linear-gradient(to left, rgba(0, 212, 255, 1), rgba(12, 128, 235, 0));
   height: 200px;
   float: none;
   z-index: -1;
