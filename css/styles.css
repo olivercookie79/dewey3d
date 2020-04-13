@@ -11,9 +11,9 @@ margin:auto;
   font-family: 'Orbitron', sans-serif;
   color: white;
   text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
-  font-size: 90px;
+  font-size: 100px;
   position: absolute;
-  top: 75px;
+  top: 40px;
   left:360px;
   z-index: 1;
 
@@ -39,11 +39,11 @@ margin:auto;
 
 .colorbg {
   position: absolute;
-  top: 150px;
+  top: 120px;
   left:120px;
   width:1200px;
   background-image:linear-gradient(to left, rgba(0, 220, 255, 1),rgba(12, 128, 235, 0));
-  height: 120px;
+  height: 140px;
   float: none;
   z-index: -1;
 }
@@ -52,4 +52,4 @@ margin:auto;
 
 
 
-canvas { width:70%; height: 90%;outline: 5px  black;}
+canvas { width:70%; height: 80%;outline: 5px  black;}
